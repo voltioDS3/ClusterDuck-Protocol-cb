@@ -7,7 +7,6 @@
 #include <TinyGPS++.h>
 #include "include/cdpcfg.h"
 #include <ctime>
-#include <memory>
 
 class DuckGPS {
 public:
