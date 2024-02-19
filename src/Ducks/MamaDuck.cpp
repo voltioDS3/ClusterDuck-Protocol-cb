@@ -228,6 +228,7 @@ void MamaDuck::handleReceivedPacket() {
         }
         break;
         default:
+          recvDataCallback(rxPacket->getBuffer()); // Custom code added, so Mama can recieve and procces custom messages , works if mama has a cb funtion given by onRecieveDuckData
           err = duckRadio.relayPacket(rxPacket);
           if (err != DUCK_ERR_NONE) {
             logerr("====> ERROR handleReceivedPacket failed to relay. rc = " + String(err));
