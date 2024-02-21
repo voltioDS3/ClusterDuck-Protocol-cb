@@ -106,6 +106,20 @@ enum topics {
   gp2y = 0xFA,
   // bmp280
   bmp280 = 0xFB,
+
+   BME620 = 0x19,
+
+  LIGHT = 0x1A,
+
+  TIME = 0x1B,
+
+  REPORT = 0x1C,
+
+  SENSORDATA = 0x1D,
+
+  PING = 0x1E,
+
+  BIG_PING = 0x1F,
   // DHT11 sensor
   dht11 = 0xFC,
   // ir sensor

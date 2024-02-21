@@ -227,8 +227,25 @@ void MamaDuck::handleReceivedPacket() {
           }
         }
         break;
-        default:
+
+        case topics::REPORT:{
           recvDataCallback(rxPacket->getBuffer()); // Custom code added, so Mama can recieve and procces custom messages , works if mama has a cb funtion given by onRecieveDuckData
+          
+        }break;
+
+        case topics::TIME:{
+          recvDataCallback(rxPacket->getBuffer()); // Custom code added, so Mama can recieve and procces custom messages , works if mama has a cb funtion given by onRecieveDuckData
+          
+        }break;
+
+        case topics::SENSORDATA:{
+          recvDataCallback(rxPacket->getBuffer()); // Custom code added, so Mama can recieve and procces custom messages , works if mama has a cb funtion given by onRecieveDuckData
+          
+        }break;
+
+     
+        default:
+          
           err = duckRadio.relayPacket(rxPacket);
           if (err != DUCK_ERR_NONE) {
             logerr("====> ERROR handleReceivedPacket failed to relay. rc = " + String(err));
